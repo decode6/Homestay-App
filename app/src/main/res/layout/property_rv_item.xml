@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/idCVCOurseItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="325dp"
+        android:layout_height="243dp"
+        android:layout_margin="2dp"
+        android:orientation="vertical"
+        android:padding="4dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="384dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            />
+
+
+        <TextView
+            android:id="@+id/iduserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Email"
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!--Textview for displaying our Course Name-->
+        <TextView
+            android:id="@+id/idpropertyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Property Name"
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!--Textview for displaying our property Duration-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpropertyDuration"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="Duration"-->
+<!--            android:textColor="@color/black" />-->
+
+        <!--Textview for displaying our Course Description-->
+        <TextView
+            android:id="@+id/idpropertyAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Address"
+            android:textColor="@color/black" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/idpropertyAmount"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="Amount"-->
+<!--            android:textColor="@color/black" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpropertyParking"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="Parking"-->
+<!--            android:textColor="@color/black" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpropertyCooking"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="Cooking"-->
+<!--            android:textColor="@color/black" />-->
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

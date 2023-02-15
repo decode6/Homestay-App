@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#20FFC107"
+    android:orientation="vertical"
+    tools:context=".AddPropertyActivity">
+    <TextView
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#FDFAFA"
+        android:text="Property Add Form"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:background="#ACA1A1" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Property Name"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/pname"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="3dp"
+            android:background="#5676"
+            android:hint="@string/enter_property_name"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Duration"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/pduration"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="13dp"
+            android:background="#5676"
+            android:hint="@string/enter_duration_in_hours"
+            android:inputType="time"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Address"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/paddress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:background="#5676"
+            android:hint="@string/enter_property_address"
+            android:inputType="text"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Amount"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/pamount"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:background="#5676"
+            android:hint="@string/enter_property_amount_per_hour"
+            android:inputType="number"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/cooking_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="35dp"
+            android:text="Self-Cooking"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/cooking_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Yes"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/cooking_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="No"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+
+
+
+    <RadioGroup
+        android:id="@+id/parking_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="35dp"
+            android:text="Parking"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/parking_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Yes"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/parking_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="No"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+<!--    <GridLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:columnCount="2"-->
+<!--        android:orientation="horizontal"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:text="Facilities"-->
+<!--            android:textSize="20sp" />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+
+<!--        </LinearLayout>-->
+
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/tv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="TV"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/refrigerator"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Refrigerator"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/ac"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="AC"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/attached_bathroom"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Attached Bathroom"-->
+<!--            android:textSize="20sp" />-->
+
+
+<!--    </GridLayout>-->
+
+
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="324dp"
+        android:layout_height="130dp"
+        android:layout_above="@+id/idBtnSubmitCourse"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="7dp" />
+
+
+    <Button
+        android:id="@+id/idImageBtn"
+        android:layout_width="339dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="15dp"
+        android:text="Image Button"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/idBtnSubmitProperty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFC107"
+        android:text="Submit"
+        android:textColor="#F5FBF6" />
+
+<!--    <Button-->
+<!--        android:id="@+id/idBtnReadProperty"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="#FFC107"-->
+<!--        android:text="View"-->
+<!--        android:textColor="#F5FBF6" />-->
+</LinearLayout>
+

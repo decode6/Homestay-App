@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Homestay</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">23TSxUoSLqQ5BxbXpXCr6VMdTYO0ti5evyY035rL</string>
+    <string name="back4app_client_key">8D3Lj9c8EP69iJHNrzzldlLEOkw9UydalammYs8S
+</string>
+    <string name="logo">logo</string>
+    <string name="enter_a_username">User Name</string>
+    <string name="enter_email_id">Enter Email Id</string>
+    <string name="enter_an_email_id">Email Id</string>
+    <string name="enter_a_password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">already have an account?</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">do not have an account?</string>
+    <string name="enter_username">User Name</string>
+    <string name="enter_password">Password</string>
+    <string name="enter_an_email_id_or_password">User Name/Password</string>
+    <string name="Password">Password</string>
+    <string name="Username">Username</string>
+    <string name="Email">Email Id</string>
+    <string name="Email_or_Username">Email Id/Username</string>
+    <string name="forgot_password_msg" />
+    <string name="enter_email" />
+    <string name="reset_password" />
+    <string name="tv_forgot_pass" />
+    <string name="add_item_menu">ADD PROPERTY</string>
+    <string name="logout_menu">LOGOUT</string>
+    <string name="logout">LOGOUT</string>
+    <string name="signup_error_message" />
+    <string name="signup_error_title" />
+    <string name="twitterUsername">\@joeytribbiani</string>
+    <string name="Property_Add" />
+    <string name="enter_property_name" />
+    <string name="Duration" />
+    <string name="enter_duration_in_hours" />
+    <string name="Address" />
+    <string name="enter_property_address" />
+    <string name="Amount" />
+    <string name="enter_property_amount_per_hour" />
+    <string name="Yes" />
+    <string name="No" />
+    <string name="Parking" />
+    <string name="Facilities" />
+    <string name="Refrigerator" />
+    <string name="AC" />
+    <string name="Attached_bathroom" />
+    <string name="Submit" />
+    <string name="TV" />
+    <string-array name="people_allowed">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item></item>
+    </string-array>
+
+
+</resources>
