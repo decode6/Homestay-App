@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".CategoriesActivity"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="402dp"
+            android:layout_height="139dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:padding="15dp"
+            android:src="@drawable/homestay_logoh" />
+
+
+        <RelativeLayout
+            android:id="@+id/tourist"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/catback"
+            android:layout_marginBottom="15dp"
+            >
+            <TextView
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:fontFamily="@font/baloo2_medium"
+                android:text="Tourist Login"
+                android:padding="25dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expand_all"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentBottom="true"/>
+
+            <ImageView
+
+                android:layout_width="85dp"
+                android:layout_height="170dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-40dp"
+                android:layout_marginRight="19dp"
+                android:src="@drawable/traveler" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/owner"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/catback"
+            android:layout_marginBottom="15dp"
+            >
+
+
+            <TextView
+                android:id="@+id/Owner"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:fontFamily="@font/baloo2_medium"
+                android:text="Owner Login"
+                android:padding="25dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expand_all"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentBottom="true"/>
+            <ImageView
+                android:layout_width="85dp"
+                android:layout_height="170dp"
+                android:src="@drawable/broker"
+                android:layout_marginTop="-40dp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+<!--&lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/admin"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="120dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@drawable/catback"&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/textView3"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textSize="30sp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:fontFamily="@font/baloo2_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text="Admin"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:padding="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/white"/>&ndash;&gt;-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/expand_all"-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--            <ImageView-->
+<!--                android:layout_width="110dp"-->
+<!--                android:layout_height="210dp"-->
+<!--                android:src="@drawable/admin"-->
+<!--                android:layout_marginTop="-40dp"-->
+<!--                android:layout_alignParentRight="true"/>-->
+<!--        </RelativeLayout>-->
+    </LinearLayout>
+</ScrollView>

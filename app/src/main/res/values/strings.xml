@@ -48,6 +48,8 @@
     <string name="Attached_bathroom" />
     <string name="Submit" />
     <string name="TV" />
+    <string name="expand_all" />
+    <string name="car_rent" />
     <string-array name="people_allowed">
         <item>1</item>
         <item>2</item>

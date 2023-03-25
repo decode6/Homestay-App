@@ -1,129 +1,121 @@
 package com.example.homestay;
+
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.time.Instant;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
-
+import java.util.List;
 public class PropertyRVAdapter extends RecyclerView.Adapter<PropertyRVAdapter.ViewHolder> {
-    private Context context;
-    private ArrayList<PropertyModel> PropertyModelArrayList;
 
-    // creating a constructor class.
+
+    private Context context;
+    private ArrayList<PropertyModel> propertyModelArrayList;
+
+
     public PropertyRVAdapter(Context context, ArrayList<PropertyModel> propertyModelArrayList) {
         this.context = context;
-        this.PropertyModelArrayList = propertyModelArrayList;
+        this.propertyModelArrayList = propertyModelArrayList;
     }
 
     @NonNull
     @Override
-    public PropertyRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // passing our layout file for displaying our card item
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.property_rv_item, parent, false));
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.property_rv_item, parent, false);
+
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PropertyRVAdapter.ViewHolder holder, int position) {
-        // setting data to our text views from our modal class.
-        PropertyModel courses = PropertyModelArrayList.get(position);
-        holder.propertyName.setText(courses.getPropertyName());
-//        holder.propertyDuration.setText(courses.getPropertyDuration());
-        holder.propertyAddress.setText(courses.getPropertyAddress());
-//        holder.propertyAmount.setText(courses.getPropertyAmount());
-        holder.userEmail.setText(courses.getEmail());
-//        holder.propertyParking.setText(courses.getPropertyParking());
-//        holder.propertyCooking.setText(courses.getPropertyCooking());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        PropertyModel property = propertyModelArrayList.get(position);
 
+        holder.propertyName.setText(property.getPropertyName());
+        holder.propertyAddress.setText(property.getPropertyAddress());
+        holder.userEmail.setText(property.getEmail());
 
-        final ImageView itemImage = holder.itemView.findViewById(R.id.imageView);
-        ParseFile imageFile = courses.getImage();
-        if (imageFile != null) {
-
-            Glide.with(context).load(imageFile.getUrl()).into(itemImage);
+        List<SlideModel> images = property.getImages();
+        if (images != null && !images.isEmpty()) {
+            holder.imageslider.setImageList(images, ScaleTypes.CENTER_CROP);
         }
 
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-                // calling a intent to open new activity.
-             Intent i = new Intent(context, UpdatePropertyActivity.class);
+                Intent intent = new Intent(context, UpdatePropertyActivity.class);
 
 
-// Convert the image to a byte array
+                intent.putExtra("propertyName", property.getPropertyName());
 
+                intent.putExtra("propertyAddress", property.getPropertyAddress());
+                intent.putExtra("propertyAmount", property.getPropertyAmount());
+                intent.putExtra("propertyParking", property.getPropertyParking());
+                intent.putExtra("propertyCooking", property.getPropertyCooking());
 
-// Update the extra in the Intent
-
-                ParseFile imageByteArray = courses.getImage();
-                i.putExtra("image", imageByteArray);
-                // on below line we are passing data to our intent on below line.
-                i.putExtra("propertyName", courses.getPropertyName());
-                i.putExtra("propertyDuration", courses.getPropertyDuration());
-                i.putExtra("propertyAddress", courses.getPropertyAddress());
-                i.putExtra("propertyAmount", courses.getPropertyAmount());
-                i.putExtra("propertyParking", courses.getPropertyParking());
-                i.putExtra("propertyCooking", courses.getPropertyCooking());
-//
-
-
-
-                // starting our activity on below line.
-            context.startActivity(i);
+                context.startActivity(intent);
             }
         });
-
-
 
     }
 
 
     @Override
     public int getItemCount() {
-        return PropertyModelArrayList.size();
+        return propertyModelArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // creating variables for our text views.
         private final TextView propertyName;
-//        private final TextView propertyDuration;
         private final TextView propertyAddress;
-//        private final TextView propertyAmount;
         private final TextView userEmail;
-//        private final TextView propertyParking;
-//        private final TextView propertyCooking;
-        private final ImageView image;
-
-
-
-
+        public ImageSlider imageslider;
+        public final Button update;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing our text views.
             propertyName = itemView.findViewById(R.id.idpropertyName);
-//            propertyDuration = itemView.findViewById(R.id.idpropertyDuration);
             propertyAddress = itemView.findViewById(R.id.idpropertyAddress);
-//            propertyAmount = itemView.findViewById(R.id.idpropertyAmount);
             userEmail = itemView.findViewById(R.id.iduserEmail);
-//            propertyParking = itemView.findViewById(R.id.idpropertyParking);
-//            propertyCooking = itemView.findViewById(R.id.idpropertyCooking);
-            image = itemView.findViewById(R.id.imageView);
+            imageslider= itemView.findViewById(R.id.image_slider);
+            update=itemView.findViewById(R.id.update);
+            update.setOnClickListener(v -> {
+                Intent intent = new Intent(itemView.getContext(), UpdatePropertyActivity.class);
+                PropertyModel property = propertyModelArrayList.get(getAdapterPosition());
+                intent.putExtra("propertyName", property.getPropertyName());
+                intent.putExtra("email",property.getEmail());
+                itemView.getContext().startActivity(intent);
+            });
+
         }
     }
 }
+

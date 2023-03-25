@@ -16,7 +16,7 @@ public class OwnerDashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_dashboard);
-        CardView profile = findViewById(R.id.idprofile);
+//        CardView profile = findViewById(R.id.idprofile);
         CardView addproperty = findViewById(R.id.idaddproperty);
 
         CardView view = findViewById(R.id.idviewproperty);
@@ -24,14 +24,15 @@ public class OwnerDashboardActivity extends AppCompatActivity {
         welcomeTextView=findViewById(R.id.welcomeviewname);
         String welcomeMessage="Welcome "+ ParseUser.getCurrentUser().getUsername();
         welcomeTextView.setText(welcomeMessage);
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OwnerDashboardActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+//
+//        profile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(OwnerDashboardActivity.this, ProfileActivity.class);
+//                intent.putExtra("username", ParseUser.getCurrentUser().getUsername());
+//                startActivity(intent);
+//            }
+//        });
         addproperty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

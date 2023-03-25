@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20FFC107"
     android:orientation="vertical"
     tools:context=".AddPropertyActivity">
     <TextView
@@ -41,34 +44,34 @@
             android:textSize="20sp" />
         <EditText
             android:id="@+id/pname"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginStart="3dp"
-            android:background="#5676"
+
             android:hint="@string/enter_property_name"
             android:textSize="20sp" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="Duration"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/pduration"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="13dp"
-            android:background="#5676"
-            android:hint="@string/enter_duration_in_hours"
-            android:inputType="time"
-            android:textSize="20sp" />
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:orientation="horizontal">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:text="Duration"-->
+<!--            android:textSize="20sp" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/pduration"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="13dp"-->
+<!--            android:background="#5676"-->
+<!--            android:hint="@string/enter_duration_in_hours"-->
+<!--            android:inputType="time"-->
+<!--            android:textSize="20sp" />-->
+<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,12 +83,14 @@
             android:layout_marginStart="5dp"
             android:text="Address"
             android:textSize="20sp" />
+
         <EditText
             android:id="@+id/paddress"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="40dp"
             android:layout_marginStart="32dp"
-            android:background="#5676"
+            android:layout_marginLeft="15dp"
+
             android:hint="@string/enter_property_address"
             android:inputType="text"
             android:textSize="20sp" />
@@ -101,14 +106,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Amount"
+            android:text=" Per Day Amount"
             android:textSize="20sp" />
+
         <EditText
             android:id="@+id/pamount"
-            android:layout_width="match_parent"
+            android:layout_width="284dp"
             android:layout_height="40dp"
             android:layout_marginStart="32dp"
-            android:background="#5676"
+            android:layout_marginBottom="15dp"
+
             android:hint="@string/enter_property_amount_per_hour"
             android:inputType="number"
             android:textSize="20sp" />
@@ -226,17 +233,16 @@
 
 
 <!--    </GridLayout>-->
-
-
-
-    <ImageView
-        android:id="@+id/imageview"
-        android:layout_width="324dp"
-        android:layout_height="130dp"
-        android:layout_above="@+id/idBtnSubmitCourse"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="7dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="35dp"
+        android:paddingTop="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Select 3 property images "
+        android:textSize="20sp" />
 
 
     <Button
@@ -252,14 +258,34 @@
         android:text="Image Button"
         android:textAllCaps="false" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_Gallery_Images"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/idBtnSubmitCourse"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:layout_marginTop="5dp"
+        />
+
+
     <Button
         android:id="@+id/idBtnSubmitProperty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#FFC107"
+
+        android:background="#1e3d59"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:text="Submit"
         android:textColor="#F5FBF6" />
+
+
+
+
+
+
 
 <!--    <Button-->
 <!--        android:id="@+id/idBtnReadProperty"-->
@@ -270,4 +296,5 @@
 <!--        android:text="View"-->
 <!--        android:textColor="#F5FBF6" />-->
 </LinearLayout>
+</ScrollView>
 

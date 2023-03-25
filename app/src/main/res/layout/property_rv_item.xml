@@ -2,95 +2,73 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/idCVCOurseItem"
+    android:id="@+id/idCVCourseItem"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="320dp"
     android:layout_margin="5dp"
     app:cardCornerRadius="6dp"
     app:cardElevation="4dp">
 
-    <LinearLayout
-        android:layout_width="325dp"
-        android:layout_height="243dp"
-        android:layout_margin="2dp"
-        android:orientation="vertical"
-        android:padding="4dp">
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="384dp"
-            android:layout_height="100dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
-            />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="false"
+            app:iss_delay="0"
+            app:iss_period="1000" />
 
-        <TextView
-            android:id="@+id/iduserEmail"
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text="Email"
-            android:textColor="@color/purple_500"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_below="@id/image_slider">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp">
 
-        <!--Textview for displaying our Course Name-->
-        <TextView
-            android:id="@+id/idpropertyName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text="Property Name"
-            android:textColor="@color/purple_500"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/iduserEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Email"
+                    android:textColor="@color/purple_500"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/idpropertyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Property Name"
+                    android:textColor="@color/purple_500"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <!--Textview for displaying our property Duration-->
-<!--        <TextView-->
-<!--            android:id="@+id/idpropertyDuration"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="2dp"-->
-<!--            android:text="Duration"-->
-<!--            android:textColor="@color/black" />-->
+                <TextView
+                    android:id="@+id/idpropertyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Address"
+                    android:textColor="@color/black" />
 
-        <!--Textview for displaying our Course Description-->
-        <TextView
-            android:id="@+id/idpropertyAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:text="Address"
-            android:textColor="@color/black" />
+                <Button
+                    android:id="@+id/update"
+                    android:background="#1e3d59"
+                    android:layout_width="400dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/white"
+                    android:text="Update" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/idpropertyAmount"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="2dp"-->
-<!--            android:text="Amount"-->
-<!--            android:textColor="@color/black" />-->
-<!--        <TextView-->
-<!--            android:id="@+id/idpropertyParking"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="2dp"-->
-<!--            android:text="Parking"-->
-<!--            android:textColor="@color/black" />-->
-<!--        <TextView-->
-<!--            android:id="@+id/idpropertyCooking"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="2dp"-->
-<!--            android:text="Cooking"-->
-<!--            android:textColor="@color/black" />-->
-
-
-
-    </LinearLayout>
-
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>

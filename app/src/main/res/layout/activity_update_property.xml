@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20FFC107"
+
     android:orientation="vertical"
     tools:context=".AddPropertyActivity">
   <TextView
@@ -44,31 +47,11 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="3dp"
-        android:background="#5676"
+
         android:hint="@string/enter_property_name"
         android:textSize="20sp" />
   </LinearLayout>
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="5dp"
-      android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="Duration"
-        android:textSize="20sp" />
-    <EditText
-        android:id="@+id/idEdtPropertyDuration"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="13dp"
-        android:background="#5676"
-        android:hint="@string/enter_duration_in_hours"
-        android:inputType="time"
-        android:textSize="20sp" />
-  </LinearLayout>
+
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -85,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:background="#5676"
+
         android:hint="@string/enter_property_address"
         android:inputType="text"
         android:textSize="20sp" />
@@ -108,9 +91,10 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:background="#5676"
+
         android:hint="@string/enter_property_amount_per_hour"
         android:inputType="number"
+        android:layout_marginBottom="10dp"
         android:textSize="20sp" />
   </LinearLayout>
 
@@ -173,6 +157,14 @@
         android:text="No"
         android:textSize="20sp" />
   </RadioGroup>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:layout_marginTop="8dp"
+      android:text="Select 3 images"
+      android:textSize="20sp" />
 
   <!--    <GridLayout-->
   <!--        android:layout_width="match_parent"-->
@@ -252,12 +244,22 @@
       android:text="Image Button"
       android:textAllCaps="false" />
 
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView_Gallery_Images"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/idBtnSubmitCourse"
+      android:scrollbarStyle="outsideInset"
+      android:scrollbars="vertical"
+      android:layout_marginTop="5dp"
+      />
+
   <Button
       android:id="@+id/idBtnUpdate"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
-      android:background="#FFC107"
+      android:background="#1e3d59"
       android:text="Edit"
       android:textColor="#F5FBF6" />
 
@@ -266,8 +268,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
-      android:background="#FFC107"
+      android:background="#1e3d59"
       android:text="Delete"
       android:textColor="#F5FBF6" />
 </LinearLayout>
-
+</ScrollView>
